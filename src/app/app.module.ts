@@ -1,10 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
 
 // Angular material
 import { A11yModule } from '@angular/cdk/a11y';
@@ -50,12 +47,37 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 
+// Angular service
+import { UserService } from './service/user.service';
+import { DocumentService } from './service/document.service';
+
+// Angular component
+import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { DocumentComponent } from './document/document.component';
+import { UserComponent } from './user/user.component';
+import { DocumentDetailComponent } from './document-detail/document-detail.component';
+import { DocumentSearchComponent } from './document-search/document-search.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserSearchComponent } from './user-search/user-search.component';
+import { HomeComponent } from './home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    DocumentComponent,
+    UserComponent,
+    DocumentDetailComponent,
+    DocumentSearchComponent,
+    UserDetailComponent,
+    UserSearchComponent,
+    HomeComponent
   ],
-  providers: [],
+  providers: [
+    UserService,
+    DocumentService
+  ],
   imports: [
     AppRoutingModule,
     BrowserModule,
